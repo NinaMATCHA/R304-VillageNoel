@@ -12,12 +12,11 @@ public abstract class Humanoid extends SimulatorCharacter {
         super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
     }
 
+    /**
+     * Méthode qui vérifie si c'est une créature
+     * @return false
+     */
     public boolean isCreature() {
-        return false;
-    }
-
-    public boolean isDevoured() {
-        // TODO : Faire les différents cas au moment des noces funebres
         return false;
     }
 }

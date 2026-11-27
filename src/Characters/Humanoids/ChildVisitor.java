@@ -8,6 +8,9 @@ public class ChildVisitor extends Humanoid implements Entertainable {
         super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
     }
 
+    /**
+     * Méthode qui fait jouer les personnages
+     */
     @Override
     public void play() {
         System.out.print(getName() + " Le " + getRace() + " se divertit.");

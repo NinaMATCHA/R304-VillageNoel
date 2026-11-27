@@ -12,11 +12,19 @@ public class Confectionery extends SimulatorBuilding {
         super(area, maxCapacity, cleanliness);
     }
 
+    /**
+     * Méthode qui vérifie si le personnage peut être accepté
+     * @param character
+     * @return true
+     */
     @Override
     public boolean canAccept(SimulatorCharacter character) {
         return true;
     }
 
+    /**
+     * Méthode qui fait manger tout le monde
+     */
     public void feedEveryone() {
         SimulatorCharacter[] present = getPresentCharacters();
 

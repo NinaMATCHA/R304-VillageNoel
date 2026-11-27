@@ -9,11 +9,19 @@ public class Workshops extends SimulatorBuilding {
         super(area, maxCapacity, cleanliness);
     }
 
+    /**
+     * Méthode qui verifie si le personnage peut etre accepté dans le batiment
+     * @param character
+     * @return true ou false selon les cas
+     */
     @Override
     public boolean canAccept(SimulatorCharacter character) {
         return character instanceof Humanoid;
     }
 
+    /**
+     * Méthode qui fait faire travailler les personnages
+     */
     public void work() {
         SimulatorCharacter[] charactersPresent = getPresentCharacters();
 

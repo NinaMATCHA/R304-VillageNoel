@@ -51,6 +51,11 @@ public class SantaClaus {
         return buildings[index];
     }
 
+    /**
+     * Méthode qui fait faire jouer le joueur
+     * @param buildings
+     * @param scanner
+     */
     public void play(SimulatorBuilding[] buildings, Scanner scanner) {
         int nbAction = 3;
 

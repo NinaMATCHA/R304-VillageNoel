@@ -17,6 +17,9 @@ public class Lutin extends Humanoid implements Worker, Entertainable {
         super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
     }
 
+    /**
+     * Méthode qui vérifie si le lutin se transforme ou pas
+     */
     // TODO : Certains lutin peuvent se transformer en lutins farceurs
     public void checkTransformation() {
         if(!prankster && new Random().nextInt(100) < 10) {

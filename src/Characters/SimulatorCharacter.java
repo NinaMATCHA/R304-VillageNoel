@@ -1,11 +1,14 @@
 package Characters;
 
 import Food.Food;
+import Food.FoodType;
 
 /**
+ * Class mère SimulatorCharacter qui recupère toutes les informations des characters
+ * et leur fait faire des actions différentes
+ *
  * @author Ewan FRANCOIS
- * @class SimulatorCharacter
- * 
+ * @version 1.1
  */
 
 public class SimulatorCharacter {
@@ -102,14 +105,26 @@ public class SimulatorCharacter {
 
     // --- METHODES ---
 
+    /**
+     * Méthode qui fait les bruits des créatures
+     * @param Race
+     */
     public void doNoice(String Race) {
         System.out.println("Coucou, je suis " + getRace() + ", je m'appelle " + getName() + " et j'ai " + getAge());
     }
 
+    /**
+     * Méthode qui fait déplacer les personnages
+     */
     public void move() {
         // TODO : Se deplace dans les divers batiments
     }
 
+    /**
+     * Méthode qui fait faire manger les personnages
+     * @param food
+     * @return true ou false selon les cas
+     */
     public boolean eat(Food food) {
         if (sleep()) {
             System.out.println(getName() + " mange...");
@@ -121,6 +136,10 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui fait faire dormir les personnages
+     * @return false ou true selon les cas
+     */
     public boolean sleep() {
         if (isTirednessMeter()) {
             System.out.println(getName() + " s'endort...");
@@ -131,6 +150,10 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui fait faire les activités aux personnages
+     * @return false ou true selon les cas
+     */
     public boolean doActivity() {
         if (sleep() || !eat(new Food(FoodType.BISCUIT))) {
             System.out.println(getName() + " pars faire son activité...");
@@ -142,6 +165,11 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui change la magie des personnages
+     * @param magic
+     * @return int
+     */
     public int changeMagic(int magic) {
         if (doActivity()) {
             System.out.println(getName() + " s'amuse et gagne de la magie de Noel");

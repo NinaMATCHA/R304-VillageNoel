@@ -49,8 +49,18 @@ public abstract class SimulatorBuilding {
 
     // --- METHODES ---
 
+    /**
+     * Méthode qui vérifie si le personnage peut etre accepté dans les différents bâtiments
+     * @param character
+     * @return true ou false selon les bâtiments
+     */
     public abstract boolean canAccept(SimulatorCharacter character);
 
+    /**
+     * Méthode qui fait ajouter des personnages dans les bâtiments
+     * @param character
+     * @return true ou false selon les cas
+     */
     public boolean welcomeCharacter(SimulatorCharacter character) {
         if (currentCapacity >= maxCapacity) {
             System.out.println("Le bâtiment est plein.");
@@ -65,6 +75,10 @@ public abstract class SimulatorBuilding {
         return true;
     }
 
+    /**
+     * Méthode qui retire les personnages des bâtiments
+     * @param character
+     */
     public void removeCharacter(SimulatorCharacter character) {
         for (int i = 0; i < currentCapacity; i++) {
             if (presentCharacters[i] == character) {
@@ -79,6 +93,10 @@ public abstract class SimulatorBuilding {
         }
     }
 
+    /**
+     * Méthode qui affiche les personnages actuel dans le bâtiment avec leurs informations
+     * @return String
+     */
     public String showActualCharactersInBuildingAndBuildingInfo() {
         StringBuilder result = new StringBuilder("Caractéristique du bâtiment : " + area + " m², "
                 + currentCapacity + " personne(s) sur " + maxCapacity
@@ -90,6 +108,10 @@ public abstract class SimulatorBuilding {
         return result.toString();
     }
 
+    /**
+     * Méthode qui vérifie si le bâtiment peut etre nettoyé ou non
+     * @return
+     */
     public boolean canBeCleanUp() {
         return cleanliness == Cleanliness.MAUVAIS && currentCapacity == 0;
     }
@@ -103,6 +125,11 @@ public abstract class SimulatorBuilding {
         System.out.println("Le bâtiment a été nettoyé");
     }
 
+    /**
+     * Méthode qui verifie si un personnage se trouve bien dans le bâtiment
+     * @param character
+     * @return true ou false
+     */
     public boolean contains(SimulatorCharacter character) {
         for (int i = 0; i < getCurrentCapacity(); i++) {
             if (presentCharacters[i] == character) {

@@ -16,6 +16,10 @@ public abstract class Creature extends SimulatorCharacter {
         super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
     }
 
+    /**
+     * Méthode qui s'occupe d'enclencher les rencontres funèbre
+     * @param building
+     */
     public void funeralEncounter(SimulatorBuilding building) {
         SimulatorCharacter[] presents = building.getPresentCharacters();
         int count = building.getCurrentCapacity();
