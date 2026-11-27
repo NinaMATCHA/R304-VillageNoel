@@ -1,7 +1,9 @@
-/**
- * Werewolf dans une colonie.
- */
-public class Werewolf {
+package Characters.Creatures;
+
+import Abilities.Entertainable;
+import Abilities.Worker;
+
+public class Werewolf extends Creature implements Worker, Entertainable {
     public enum Sex {M, F}
     public enum Age {
         YOUNG(1),
@@ -22,6 +24,10 @@ public class Werewolf {
     private int level;
     private int impetuosityFactor;
     private String clan;
+
+    public Werewolf(String Name, String Sexe, String Race, int Age, int HungerMeter, boolean TirednessMeter, int Magic) {
+        super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
+    }
 
     public Werewolf(Sex sex, Age age, int strength, int dominationFactor, Rank rank, int impetuosityFactor, String clan) {
         this.sex = sex;
