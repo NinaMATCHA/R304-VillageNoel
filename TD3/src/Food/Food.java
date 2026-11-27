@@ -1,7 +1,7 @@
 package Food;
 
 public class Food {
-    private String Name;
+    private static String Name;
     private int Value;
 
     public Food() {
@@ -15,7 +15,7 @@ public class Food {
     }
 
     public Food(FoodType type) {
-        this.Name = type.name();
+        this.Name = type.getName();
         this.Value = type.getValue();
     }
 

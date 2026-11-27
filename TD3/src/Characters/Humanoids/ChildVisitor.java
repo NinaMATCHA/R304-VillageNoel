@@ -11,6 +11,6 @@ public class ChildVisitor extends Humanoid implements Entertainable {
     @Override
     public void play() {
         System.out.print(getName() + " Le " + getRace() + " se divertit.");
-        setMagic(getMagic() + 20);
+        setMagic(getMagic() + 30);
     }
 }

@@ -20,7 +20,7 @@ public abstract class Creature extends SimulatorCharacter {
         SimulatorCharacter[] presents = building.getPresentCharacters();
         int count = building.getCurrentCapacity();
 
-        // 1. y a-t-il une créature, et combien d'humanoïdes ?
+        // y a-t-il une créature, et combien d'humanoïdes ?
         SimulatorCharacter creature = null;
         int humanoidCount = 0;
         for (int i = 0; i < count; i++) {
@@ -34,7 +34,7 @@ public abstract class Creature extends SimulatorCharacter {
             return;
         }
 
-        // 2. choisir une victime au hasard parmi les humanoïdes
+        // choisir une victime au hasard parmi les humanoïdes
         Random random = new Random();
         int target = random.nextInt(humanoidCount);
         SimulatorCharacter victim = null;
@@ -49,13 +49,13 @@ public abstract class Creature extends SimulatorCharacter {
             }
         }
 
-        // 3. probabilité : forte s'il se repose, faible sinon (bruyant)
+        // probabilité : forte s'il se repose, faible sinon (bruyant)
         int chance = victim.isTirednessMeter() ? 50 : 10;
         if (random.nextInt(100) >= chance) {
             return;
         }
 
-        // 4. les témoins perdent beaucoup de magie
+        // les témoins perdent beaucoup de magie
         System.out.println(creature.getName() + " dévore " + victim.getName() + " !");
         for (int i = 0; i < count; i++) {
             if (presents[i] instanceof Humanoid && presents[i] != victim) {
@@ -63,7 +63,7 @@ public abstract class Creature extends SimulatorCharacter {
             }
         }
 
-        // 5. la victime disparaît du bâtiment (en dernier, car ça décale le tableau)
+        // la victime disparaît du bâtiment (en dernier, car ça décale le tableau)
         building.removeCharacter(victim);
     }
 }

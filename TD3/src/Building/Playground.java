@@ -21,7 +21,13 @@ public class Playground extends SimulatorBuilding {
         }
     }
 
-    public void takeCare() {
+    public void takeCare(SimulatorBuilding building) {
         // TODO : doit avoir un entretient fréquent
+        if (building.getCleanliness() == Cleanliness.MAUVAIS) {
+            building.setCleanliness(Cleanliness.CORRECT);
+        }
+        if (building.getCleanliness() == Cleanliness.CORRECT) {
+            building.setCleanliness(Cleanliness.BON);
+        }
     }
 }
