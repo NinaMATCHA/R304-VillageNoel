@@ -8,6 +8,11 @@ public class SantaClausHouse extends SimulatorBuilding {
         super(area, maxCapacity, cleanliness);
     }
 
+    /**
+     * Méthode qui verifie si le personnage peut etre accepte
+     * @param character
+     * @return false
+     */
     @Override
     public boolean canAccept(SimulatorCharacter character) {
         return false;

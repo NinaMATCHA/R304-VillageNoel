@@ -114,14 +114,14 @@ public class SimulatorCharacter {
     }
 
     /**
-     * Méthode qui fait déplacer les characters
+     * Méthode qui fait déplacer les personnages
      */
     public void move() {
         // TODO : Se deplace dans les divers batiments
     }
 
     /**
-     * Méthode qui fait faire manger les characters
+     * Méthode qui fait faire manger les personnages
      * @param food
      * @return true ou false selon les cas
      */
@@ -137,7 +137,7 @@ public class SimulatorCharacter {
     }
 
     /**
-     * Méthode qui fait faire dormir les characters
+     * Méthode qui fait faire dormir les personnages
      * @return false ou true selon les cas
      */
     public boolean sleep() {
@@ -150,6 +150,10 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui fait faire les activités aux personnages
+     * @return false ou true selon les cas
+     */
     public boolean doActivity() {
         if (sleep() || !eat(new Food(FoodType.BISCUIT))) {
             System.out.println(getName() + " pars faire son activité...");
@@ -161,6 +165,11 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui change la magie des personnages
+     * @param magic
+     * @return int
+     */
     public int changeMagic(int magic) {
         if (doActivity()) {
             System.out.println(getName() + " s'amuse et gagne de la magie de Noel");

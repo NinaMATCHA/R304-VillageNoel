@@ -4,6 +4,8 @@ out/
 !**/src/test/**/out/
 .kotlin
 .idea
+TD3 - Village Noel.iml
+/src/TD3.iml
 
 ### Eclipse ###
 .apt_generated
