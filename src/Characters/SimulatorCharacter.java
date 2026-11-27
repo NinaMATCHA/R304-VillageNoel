@@ -1,11 +1,14 @@
 package Characters;
 
 import Food.Food;
+import Food.FoodType;
 
 /**
+ * Class mère SimulatorCharacter qui recupère toutes les informations des characters
+ * et leur fait faire des actions différentes
+ *
  * @author Ewan FRANCOIS
- * @class SimulatorCharacter
- * 
+ * @version 1.1
  */
 
 public class SimulatorCharacter {
@@ -102,14 +105,26 @@ public class SimulatorCharacter {
 
     // --- METHODES ---
 
+    /**
+     * Méthode qui fait les bruits des créatures
+     * @param Race
+     */
     public void doNoice(String Race) {
         System.out.println("Coucou, je suis " + getRace() + ", je m'appelle " + getName() + " et j'ai " + getAge());
     }
 
+    /**
+     * Méthode qui fait déplacer les characters
+     */
     public void move() {
         // TODO : Se deplace dans les divers batiments
     }
 
+    /**
+     * Méthode qui fait faire manger les characters
+     * @param food
+     * @return true ou false selon les cas
+     */
     public boolean eat(Food food) {
         if (sleep()) {
             System.out.println(getName() + " mange...");
@@ -121,6 +136,10 @@ public class SimulatorCharacter {
         }
     }
 
+    /**
+     * Méthode qui fait faire dormir les characters
+     * @return false ou true selon les cas
+     */
     public boolean sleep() {
         if (isTirednessMeter()) {
             System.out.println(getName() + " s'endort...");
