@@ -1,22 +1,22 @@
 import java.util.Random;
 
-public class Meute {
-    private CoupleAlpha couple;
-    private Lycanthrope[] membres;
+public class Clan {
+    private AlphaCouple couple;
+    private Werewolf[] members;
 
-    public Meute(CoupleAlpha couple, Lycanthrope[] membres) {
+    public Clan(AlphaCouple couple, Werewolf[] members) {
         this.couple = couple;
-        this.membres = membres;
+        this.members = members;
 
     }
 
-    public void reproduire(Lycanthrope male, Lycanthrope femelle) {
+    public void reproduire(Werewolf male, Werewolf female) {
         System.out.println("Le couple alpha se reproduit !");
         Random random = new Random();
         int nbBaby = random.nextInt(7-1) + 1;
         System.out.println("Le couple alpha a eu " + nbBaby + " bébés !");
         for (int i = 0; i < nbBaby; i++) {
-            membres[i] = new Lycanthrope("sexe", 10, 10, 10, "meute");
+            membres[i] = new Werewolf("sex", 10, 10, 10, "clan");
         }
 
     }
