@@ -56,7 +56,7 @@ public class Werewolf extends Creature implements Worker, Entertainable {
         return this.rank;
     }
 
-    public int getlevel() {
+    public int getLevel() {
         return this.level;
     }
 
@@ -105,7 +105,7 @@ public class Werewolf extends Creature implements Worker, Entertainable {
         else if (impetuosityFactor * strength <= other.getstrength()){
                 System.out.println("Impossible : l'adversaire semble trop fort...");
         }
-        else if( other.getRank() == Rank.OMEGA || other.getlevel() < this.getlevel()) {
+        else if( other.getRank() == Rank.OMEGA || other.getLevel() < this.getLevel()) {
             System.out.println("Domination");
             this.dominationFactor += 1;
             other.dominationFactor += -1;
@@ -113,8 +113,8 @@ public class Werewolf extends Creature implements Worker, Entertainable {
                 Rank tmp = this.getRank();
                 this.setRank(other.getRank());
                 other.setRank(tmp);
-                System.out.println("Rang echange : ");
-                System.out.println("level : ");
+                System.out.println("Rang echange : " + this.getRank());
+                System.out.println("level : " + this.getLevel());
             }
         }
         else {

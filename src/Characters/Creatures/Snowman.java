@@ -3,9 +3,9 @@ package Characters.Creatures;
 import Abilities.Entertainable;
 import Abilities.Worker;
 
-public class BonsHommeDeNeigeVivant extends Creature implements Worker, Entertainable {
+public class Snowman extends Creature implements Worker, Entertainable {
 
-    public BonsHommeDeNeigeVivant(String Name, String Sexe, String Race, int Age, int HungerMeter, boolean TirednessMeter, int Magic) {
+    public Snowman(String Name, String Sexe, String Race, int Age, int HungerMeter, boolean TirednessMeter, int Magic) {
         super(Name, Sexe, Race, Age, HungerMeter, TirednessMeter, Magic);
     }
 
